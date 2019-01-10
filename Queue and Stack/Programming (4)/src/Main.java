@@ -9,16 +9,26 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     String input = scanner.next();
     Deque<Character> stack = new ArrayDeque<>();
+    boolean answer = true;
     for (char c: input.toCharArray()) {
       if (c == '(' || c == '{' || c == '[') {
         stack.push(c);
       } else {
+        if (stack.isEmpty()) {
+          answer = false;
+          break;
+        }
         char tmp = stack.pop();
-        if ((c == '{' && tmp == '}') || (c == '(' && tmp == ')')
-        || (c == '[' && tmp == ']')) {
-
+        if (!((tmp == '{' && c == '}') || (tmp == '(' && c == ')')
+        || (tmp == '[' && c == ']'))) {
+          answer = false;
+          break;
         }
       }
     }
+    if (!stack.isEmpty()) {
+      answer = false;
+    }
+    System.out.println(answer);
   }
 }
