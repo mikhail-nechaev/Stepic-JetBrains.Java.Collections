@@ -9,7 +9,9 @@ public class Main {
 
     //write your code here
 
-
+    for (String s: nameSet) {
+      System.out.println(s);
+    }
 
   }
 }

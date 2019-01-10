@@ -6,6 +6,7 @@ public class Main {
 
 
     //write your code here
+    TreeSet<String> set = new TreeSet<>(Arrays.asList("Gamma", "Alpha", "Omega"));
 
 
     System.out.println(set);
