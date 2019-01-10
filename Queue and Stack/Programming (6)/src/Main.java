@@ -47,8 +47,8 @@ class Stack {
 
   public void push(int val) {
     values.push(val);
-    if (val > this.max() || maxes.isEmpty()) {
-      maxes.push(val);
+    if (val > this.max()) {
+      maxes.push(this.max());
     } else {
       maxes.push(this.max());
     }
